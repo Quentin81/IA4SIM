@@ -1,0 +1,61 @@
+@prefix myOnto: <http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+[rule_can_do_mission:
+(?x rdf:type myOnto:Unit),
+(?y rdf:type myOnto:Mission),
+(?a rdf:type myOnto:Environment),
+(?t rdf:type myOnto:Target),
+(?y myOnto:has_environment ?a),
+(?x myOnto:can_operate ?a),
+(?y myOnto:has_target ?t),
+(?x myOnto:can_destroy ?t) 
+-> (?x myOnto:can_accomplish ?y)]
+
+[rule_can_destroy: 
+(?x rdf:type myOnto:Unit) 
+(?y rdf:type myOnto:Equipment)
+(?t rdf:type myOnto:Target)
+(?x myOnto:has_equipment ?y)
+(?y myOnto:can_destroy ?t) 
+-> (?x myOnto:can_destroy ?t)]
+
+[rule_can_operate: 
+(?x rdf:type myOnto:Unit) 
+(?y rdf:type myOnto:Equipment)
+(?a rdf:type myOnto:Environment)
+(?x myOnto:has_equipment ?y)
+(?y myOnto:can_operate ?a) 
+-> (?x myOnto:can_operate ?a)]
+
+[rule_strongest_then_strong: 
+(?x rdf:type myOnto:Unit)
+(?x myOnto:can_destroy myOnto:Strongest_target) 
+-> (?x myOnto:can_destroy myOnto:Strong_target)]
+[rule_strong_then_medium: 
+(?x rdf:type myOnto:Unit)
+(?x myOnto:can_destroy myOnto:Strong_target) 
+-> (?x myOnto:can_destroy myOnto:Medium_target)]
+[rule_medium_then_weak: 
+(?x rdf:type myOnto:Unit)
+(?x myOnto:can_destroy myOnto:Medium_target) 
+-> (?x myOnto:can_destroy myOnto:Weak_target)]
+[rule_weak_then_weakest: 
+(?x rdf:type myOnto:Unit)
+(?x myOnto:can_destroy myOnto:Weak_target) 
+-> (?x myOnto:can_destroy myOnto:Weakest_target)]
+
+[rule_ship_o: (?x rdf:type myOnto:Ship) -> (?x myOnto:can_operate myOnto:Water)]
+[rule_fighter_o: (?x rdf:type myOnto:Fighter) -> (?x myOnto:can_operate myOnto:Air)]
+[rule_bomber_o1: (?x rdf:type myOnto:Bomber) -> (?x myOnto:can_operate myOnto:Ground)]
+[rule_bomber_o2: (?x rdf:type myOnto:Bomber) -> (?x myOnto:can_operate myOnto:Water)]
+[rule_infantry_o1: (?x rdf:type myOnto:Infantry) -> (?x myOnto:can_operate myOnto:Ground)]
+[rule_infantry_o2: (?x rdf:type myOnto:Infantry) -> (?x myOnto:can_operate myOnto:Interior)]
+[rule_tank_o: (?x rdf:type myOnto:Tank) -> (?x myOnto:can_operate myOnto:Ground)]
+
+[rule_corvette_d: (?x rdf:type myOnto:Corvette) -> (?x myOnto:can_destroy myOnto:Weak_target)]
+[rule_battleship_d: (?x rdf:type myOnto:BattleShip) -> (?x myOnto:can_destroy myOnto:Strong_target)]
+[rule_fighter_d: (?x rdf:type myOnto:Fighter) -> (?x myOnto:can_destroy myOnto:Weak_target)]
+[rule_bomber_d: (?x rdf:type myOnto:Bomber) -> (?x myOnto:can_destroy myOnto:Strong_target)]
+[rule_infantry_d: (?x rdf:type myOnto:Infantry) -> (?x myOnto:can_destroy myOnto:Weakest_target)]
+[rule_tank_d: (?x rdf:type myOnto:Tank) -> (?x myOnto:can_destroy myOnto:Medium_target)]
