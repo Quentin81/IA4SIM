@@ -1,0 +1,374 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#"
+     xml:base="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Has_Capability -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Has_Capability">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#relational_property"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Unite"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Environment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Has_Environment -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Has_Environment">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#relational_property"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Mission"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Environment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Has_Target -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Has_Target">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#relational_property"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Mission"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Target_Resilience_Value"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Has_fire_Power -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Has_fire_Power">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#relational_property"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Unite"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Fire_Power_Value"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#relational_property -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#relational_property"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Battleship -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Battleship">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Unite"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Has_fire_Power"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Strong_Power_Value"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Corvette -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Corvette">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Unite"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Has_fire_Power"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Medium_Power_Value"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Domain_entity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Domain_entity"/>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Environment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Environment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Value"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Fire_Power_Value -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Fire_Power_Value">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Value"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Independent_entity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Independent_entity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Domain_entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Infantry -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Infantry">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#OWLClass_78397453_86ec_4cee_bde2_91b833643033"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Unite"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Has_fire_Power"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Low_Power_Value"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Low_Power_Value -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Low_Power_Value">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Fire_Power_Value"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Low_Resilience_Value -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Low_Resilience_Value">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Target_Resilience_Value"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Medium_Power_Value -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Medium_Power_Value">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Fire_Power_Value"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Medium_Resilience_Value -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Medium_Resilience_Value">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Target_Resilience_Value"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Mission -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Mission">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Independent_entity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Has_Target"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Target_Resilience_Value"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Has_Environment"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Environment"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Unite"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#OWLClass_78397453_86ec_4cee_bde2_91b833643033 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#OWLClass_78397453_86ec_4cee_bde2_91b833643033">
+        <owl:equivalentClass rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Tank"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Unite"/>
+        <rdfs:label xml:lang="fr">Ground_Vehicle</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Plane -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Plane">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Unite"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Has_fire_Power"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Strong_Power_Value"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Strong_Power_Value -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Strong_Power_Value">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Fire_Power_Value"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Strong_Resilience_Value -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Strong_Resilience_Value">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Target_Resilience_Value"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Tank -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Tank">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Unite"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Has_fire_Power"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Medium_Power_Value"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Target_Resilience_Value -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Target_Resilience_Value">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Value"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Unite -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Unite">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Independent_entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Value -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Value">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Domain_entity"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Air -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Air">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Environment"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Ground -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Ground">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Environment"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Mission1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Mission1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Mission"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Mission2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Mission2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Mission"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Underground -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Underground">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Environment"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Water -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Water">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Environment"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Battleship"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Corvette"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Infantry"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Plane"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/NewBataille#Tank"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
+
