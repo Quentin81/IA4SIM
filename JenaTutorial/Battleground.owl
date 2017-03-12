@@ -31,6 +31,16 @@
     
 
 
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#can_accomplish_without_equipment -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#can_accomplish_without_equipment">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#can_accomplish"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Unit"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Mission"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#can_destroy -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#can_destroy">
@@ -189,6 +199,8 @@
     <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Mission -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Mission"/>
+    
+
     
 
 

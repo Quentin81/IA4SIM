@@ -5,11 +5,13 @@ is assigned to Battleship4.
 ]
 mission [
 uri Mission2
-is assigned to Bomber1.
+is assigned to Bomber2.
 ]
 mission [
 uri Mission3
 is assigned to Fighter3.
+needs Armour_piercing
+
 ]
 mission [
 uri Mission4
@@ -18,6 +20,8 @@ was not assigned.
 mission [
 uri Mission5
 is assigned to IR2.
+needs Sniper
+
 ]
 mission [
 uri Mission6

@@ -3,8 +3,8 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>.
 @prefix xsd:  <http://www.w3.org/2001/XMLSchema#>.
 
-[rule_can_do_mission:
-(?x rdf:type myOnto:Unit),
+[rule_tank_can_do_mission_without_equipment:
+(?x rdf:type myOnto:Tank),
 (?y rdf:type myOnto:Mission),
 (?a rdf:type myOnto:Environment),
 (?t rdf:type myOnto:Target),
@@ -15,7 +15,35 @@ ge(?hs,?ns),
 (?x myOnto:can_operate ?a),
 (?y myOnto:has_target ?t),
 (?x myOnto:can_destroy ?t) 
--> (?x myOnto:can_accomplish ?y)]
+-> (?x myOnto:can_accomplish_without_equipment ?y)]
+
+[rule_plane_can_do_mission_without_equipment:
+(?x rdf:type myOnto:Plane),
+(?y rdf:type myOnto:Mission),
+(?a rdf:type myOnto:Environment),
+(?t rdf:type myOnto:Target),
+(?y myOnto:need_sight ?ns),
+(?x myOnto:has_sight ?hs),
+ge(?hs,?ns),
+(?y myOnto:has_environment ?a),
+(?x myOnto:can_operate ?a),
+(?y myOnto:has_target ?t),
+(?x myOnto:can_destroy ?t) 
+-> (?x myOnto:can_accomplish_without_equipment ?y)]
+
+[rule_ship_can_do_mission_without_equipment:
+(?x rdf:type myOnto:Ship),
+(?y rdf:type myOnto:Mission),
+(?a rdf:type myOnto:Environment),
+(?t rdf:type myOnto:Target),
+(?y myOnto:need_sight ?ns),
+(?x myOnto:has_sight ?hs),
+ge(?hs,?ns),
+(?y myOnto:has_environment ?a),
+(?x myOnto:can_operate ?a),
+(?y myOnto:has_target ?t),
+(?x myOnto:can_destroy ?t) 
+-> (?x myOnto:can_accomplish_without_equipment ?y)]
 
 [rule_can_do_mission_e1:
 (?x rdf:type myOnto:Unit),
