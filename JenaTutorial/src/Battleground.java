@@ -27,8 +27,8 @@ import org.apache.jena.query.* ;
 
 public class Battleground {
 
-	static String urlModel = "Battleground.owl";
-	static String urlRules = "rulesBattleground.txt";
+	static String urlModel = "Battleground2.owl";
+	static String urlRules = "rulesBattleground1.txt";
 
 
 	public static void main(String[] args) {
@@ -47,7 +47,7 @@ public class Battleground {
 				+ "\n"
 				+ "PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>"
 				+ "\n"
-				+ "SELECT ?unit ?mission WHERE {?unit myOnto:can_accomplish ?mission"
+				+ "SELECT ?mission  WHERE {?mission rdf:type myOnto:Mission"
 				+ "}"
 				+ "";
 		
@@ -55,29 +55,85 @@ public class Battleground {
 		String queryString = queryText ;
 		Query query = QueryFactory.create(queryString) ;
 		QueryExecution qexec = QueryExecutionFactory.create(query, model) ;
+		TreeSet<String> mission = new TreeSet<String>();
 		try {
 		  ResultSet results = qexec.execSelect() ;
-		  ResultSetFormatter.out(System.out, results, query) ;
 		  for ( ; results.hasNext() ;)
 		  {
 		    QuerySolution soln = results.nextSolution();
-		    ResultSetFormatter.out(System.out, results, query) ;
+		    RDFNode x = soln.get("mission");
+		    mission.add(x.toString());
 		  }
 		} finally { qexec.close() ;}
 		
-		Resource tank4 = model.getResource("http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Tank4");
-		printStatements(postRuleModel,tank4,null,null);
+		//Resource res = model.getResource("http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Mission5");
+		//printStatements(model,res,null,null);
+		
+		
+		
+		String units = "prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> "
+				+ "\n"
+				+ "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> "
+				+ "\n"
+				+ "PREFIX myOnto: <http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#> "
+				+ "\n"
+				+ "PREFIX owl: <http://www.w3.org/2002/07/owl#>"
+				+ "\n"
+				+ "PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>"
+				+ "\n"
+				+ "SELECT ?unit ?mission WHERE {?unit myOnto:can_accomplish ?mission"
+				+ "}"
+				+ ""; ;
+		Query query_units = QueryFactory.create(units) ;
+		QueryExecution qexecu = QueryExecutionFactory.create(query_units, model) ;
+		HashSet<String> unit = new HashSet<String>();
+		
+		ArrayList<String> canDo = new ArrayList<String>();
+		try {
+		  ResultSet results = qexecu.execSelect() ;
+		  
+		  for ( ; results.hasNext() ;)
+		  {
+		    QuerySolution soln = results.nextSolution();
+		    RDFNode u = soln.get("unit") ;       // Get a result variable by name
+		    RDFNode m = soln.get("mission") ;
+		    unit.add(u.toString());
+		    canDo.add(u+" "+m);
+		  }
+		} finally { qexecu.close() ;}
+		System.out.println("========================");
+		System.out.println("========================");
+		System.out.println("========================");
+		System.out.println("========================");
+		
+		FordFulkerson f =new FordFulkerson();
+		//System.out.println(mission);
+		f.addMission(mission);
+		f.addUnit(unit);
+		f.addAssignement(canDo);
+		List<Assignement> path = new LinkedList<Assignement>();
+		MissionAssignement empty = new MissionAssignement();
+		path.add(empty);
+		//f.assignMissionToUnit(f.mission("http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Mission1"), 0, path);
+		f.assignAll();
+		f.saveGraph("Report.txt");
+		
+		
+		
+		
+		
 	}
 	
     public static void printStatements(Model m, Resource s, Property p, Resource o) { 
-        PrintUtil.registerPrefix("x", "http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Tank4"); 
+        PrintUtil.registerPrefix(s.getLocalName(), "http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Tank4"); 
         for (StmtIterator i = m.listStatements(s,p,o); i.hasNext(); ) { 
             Statement stmt = i.nextStatement(); 
             System.out.println(" - " + PrintUtil.print(stmt)); 
         } 
     } 
 	
-    public static Model processRules(String fileloc, InfModel modelIn) { 
+
+	public static Model processRules(String fileloc, InfModel modelIn) { 
  
         // create a simple model; create a resource  and add rules from a file 
         Model m = ModelFactory.createDefaultModel(); 
@@ -96,5 +152,6 @@ public class Battleground {
         //infmodel.setNsPrefix("drc", "http://www.codesupreme.com/#"); 
         //infmodel.write(System.out, "N3");      
         return infmodel;     
-   } 
+   }
+ 
 }

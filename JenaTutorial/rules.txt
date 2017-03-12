@@ -1,0 +1,13 @@
+@prefix myOnto: <http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#>.
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+
+[rule_can_do_mission: 
+(?x rdf:type myOnto:Unit)
+(?y rdf:type myOnto:Mission)
+(?a rdf:type myOnto:Environment)
+(?t rdf:type myOnto:Target)
+(?y myOnto:has_environment ?a) 
+(?x myOnto:can_operate ?a)
+(?y myOnto:has_target ?t)
+(?x myOnto:can_destroy ?t) 
+-> (?x :can_accomplish ?y)]

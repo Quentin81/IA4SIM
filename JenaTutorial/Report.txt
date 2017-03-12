@@ -1,0 +1,25 @@
+Report
+mission [
+uri Mission1
+is assigned to Battleship4.
+]
+mission [
+uri Mission2
+is assigned to Bomber1.
+]
+mission [
+uri Mission3
+is assigned to Fighter3.
+]
+mission [
+uri Mission4
+was not assigned.
+]
+mission [
+uri Mission5
+is assigned to IR2.
+]
+mission [
+uri Mission6
+is assigned to Battleship3.
+]

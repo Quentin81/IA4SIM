@@ -418,6 +418,24 @@
     
 
 
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Bataille3#Plane_Equipment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Bataille3#Plane_Equipment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Bataille3#Equipment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Bataille3#Radar -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Bataille3#Radar">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Bataille3#Equipment"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Bataille3#Plane_Equipment"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Bataille3#Tank_Equipment"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Bataille3#Ship -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Bataille3#Ship">
@@ -496,6 +514,14 @@
             </owl:Class>
         </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Bataille3#Truck"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Bataille3#Tank_Equipment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Bataille3#Tank_Equipment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Bataille3#Equipment"/>
     </owl:Class>
     
 
@@ -777,6 +803,14 @@
         <Bataille3:has rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Bataille3#Sniper2"/>
         <Bataille3:LineOfSight rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">30</Bataille3:LineOfSight>
         <Bataille3:MaxSpeed rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">10</Bataille3:MaxSpeed>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Bataille3#Rad -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Bataille3#Rad">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Bataille3#Radar"/>
     </owl:NamedIndividual>
     
 

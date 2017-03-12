@@ -1,0 +1,754 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#"
+     xml:base="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:Battleground="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#can_accomplish -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#can_accomplish">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Unit"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Mission"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#can_destroy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#can_destroy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Equipment"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Unit"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Target"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#can_operate -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#can_operate">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Equipment"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Unit"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Environment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#has_environment -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#has_environment">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Mission"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Environment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#has_equipment -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#has_equipment">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Unit"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Equipment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#has_target -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#has_target">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Mission"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Target"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Battleship -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Battleship">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Ship"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Corvette"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Battleship_Equipment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Battleship_Equipment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Ship_Equipment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Bomber -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Bomber">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Plane"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Fighter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Bomber_equipment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Bomber_equipment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Plane_Equipment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Corvette -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Corvette">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Ship"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Corvette_Equipment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Corvette_Equipment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Ship_Equipment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Environment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Environment"/>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Equipment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Equipment"/>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Fighter -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Fighter">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Plane"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Fighter_equipment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Fighter_equipment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Plane_Equipment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Infantry -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Infantry">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Infantry_equipment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Infantry_equipment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Equipment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Mission -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Mission"/>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Plane -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Plane">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Plane_Equipment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Plane_Equipment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Equipment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Ship -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Ship">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Ship_Equipment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Ship_Equipment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Equipment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Tank -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Tank">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Unit"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Tank_equipment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Tank_equipment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Equipment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Target -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Target"/>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Unit -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Unit"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Air -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Air">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Environment"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Anti_aircraft -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Anti_aircraft">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Tank_equipment"/>
+        <can_operate rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Air"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Anti_aircraft_ship -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Anti_aircraft_ship">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Battleship_Equipment"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Corvette_Equipment"/>
+        <can_operate rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Air"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Armour_piercing -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Armour_piercing">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Fighter_equipment"/>
+        <can_destroy rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Strong_target"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Battleship1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Battleship1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Battleship"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Battleship2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Battleship2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Battleship"/>
+        <has_equipment rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Anti_aircraft_ship"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Battleship3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Battleship3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Battleship"/>
+        <has_equipment rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Torpedo_battleship"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Battleship4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Battleship4">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Battleship"/>
+        <has_equipment rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Anti_aircraft_ship"/>
+        <has_equipment rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Torpedo_battleship"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Bazooka -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Bazooka">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Infantry_equipment"/>
+        <can_destroy rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Medium_target"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Bomber1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Bomber1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Bomber"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Bomber2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Bomber2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Bomber"/>
+        <has_equipment rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Tactical_nuke"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Bomber3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Bomber3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Bomber"/>
+        <has_equipment rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Torpedo"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Bomber4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Bomber4">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Bomber"/>
+        <has_equipment rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Tactical_nuke"/>
+        <has_equipment rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Torpedo"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Bombs -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Bombs">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Fighter_equipment"/>
+        <can_operate rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Ground"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Corvette1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Corvette1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Corvette"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Corvette2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Corvette2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Corvette"/>
+        <has_equipment rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Torpedo_corvette"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Corvette3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Corvette3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Corvette"/>
+        <has_equipment rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Anti_aircraft_ship"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Corvette4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Corvette4">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Corvette"/>
+        <has_equipment rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Anti_aircraft_ship"/>
+        <has_equipment rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Torpedo_corvette"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Explosive_ammo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Explosive_ammo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Tank_equipment"/>
+        <can_destroy rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Strong_target"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Fighter1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Fighter1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Fighter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Fighter2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Fighter2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Fighter"/>
+        <has_equipment rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Bombs"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Fighter3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Fighter3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Fighter"/>
+        <has_equipment rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Armour_piercing"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Fighter4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Fighter4">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Fighter"/>
+        <has_equipment rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Armour_piercing"/>
+        <has_equipment rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Bombs"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Ground -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Ground">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Environment"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#IR1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#IR1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Infantry"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#IR2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#IR2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Infantry"/>
+        <has_equipment rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Sniper"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#IR3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#IR3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Infantry"/>
+        <has_equipment rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Bazooka"/>
+        <has_equipment rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Sniper"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#IR4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#IR4">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Infantry"/>
+        <has_equipment rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Bazooka"/>
+        <has_equipment rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Zodiac"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Interior -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Interior">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Environment"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Medium_target -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Medium_target">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Target"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Mission1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Mission1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Mission"/>
+        <has_environment rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Water"/>
+        <has_target rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Strong_target"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Mission2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Mission2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Mission"/>
+        <has_environment rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Ground"/>
+        <has_target rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Weak_target"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Mission3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Mission3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Mission"/>
+        <has_environment rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Air"/>
+        <has_target rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Medium_target"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Mission4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Mission4">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Mission"/>
+        <has_environment rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Interior"/>
+        <has_target rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Strongest_target"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Sniper -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Sniper">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Infantry_equipment"/>
+        <can_destroy rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Weak_target"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Strong_target -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Strong_target">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Target"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Strongest_target -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Strongest_target">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Target"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Tactical_nuke -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Tactical_nuke">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Bomber_equipment"/>
+        <can_destroy rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Strongest_target"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Tank1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Tank1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Tank"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Tank2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Tank2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Tank"/>
+        <has_equipment rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Explosive_ammo"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Tank3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Tank3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Tank"/>
+        <has_equipment rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Anti_aircraft"/>
+        <has_equipment rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Explosive_ammo"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Tank4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Tank4">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Tank"/>
+        <has_equipment rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Anti_aircraft"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Torpedo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Torpedo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Bomber_equipment"/>
+        <can_operate rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Water"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Torpedo_battleship -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Torpedo_battleship">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Battleship_Equipment"/>
+        <can_destroy rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Strongest_target"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Torpedo_corvette -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Torpedo_corvette">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Corvette_Equipment"/>
+        <can_destroy rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Medium_target"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Water -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Water">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Environment"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Weak_target -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Weak_target">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Target"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Weakest_target -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Weakest_target">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Target"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Zodiac -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Zodiac">
+        <rdf:type rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Infantry_equipment"/>
+        <can_operate rdf:resource="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Water"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Environment"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Equipment"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Mission"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Target"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Unit"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Infantry"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Plane"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Ship"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Tank"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Infantry_equipment"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Plane_Equipment"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Ship_Equipment"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Tank_equipment"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDifferent"/>
+        <owl:distinctMembers rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Air"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Ground"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Interior"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/kentin/ontologies/2017/2/Battleground#Water"/>
+        </owl:distinctMembers>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
+
