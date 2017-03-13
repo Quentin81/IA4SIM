@@ -1,7 +1,7 @@
 package Algorithm;
 import java.util.LinkedList;
 
-public abstract class Node {
+public abstract class Node //This abstract class serves as union between Unit & Mission
 
 	private String uri;
 	private boolean isAssigned;
