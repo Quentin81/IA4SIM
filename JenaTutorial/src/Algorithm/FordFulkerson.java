@@ -3,10 +3,10 @@ import java.io.*;
 import java.util.*;
 
 public class FordFulkerson {
-
-	private List<Mission> missions;
-	private int m;
-	private List<Unit> units;
+	//This is the class that will execute the algorithm
+	private List<Mission> missions; //This is the list of all missions that must be assigned
+	private int m; //This is the number of missions to be assigned
+	private List<Unit> units; //This is the list of all units that can be assigned to the missions
 	
 	public FordFulkerson(){
 		missions=new LinkedList<Mission>();
@@ -19,7 +19,7 @@ public class FordFulkerson {
 		return missions;
 	}
 	
-	public Mission mission(String uri){
+	public Mission mission(String uri){ //This method returns the mission corresponding to the uri if it exists
 		for (Mission m : missions){
 			if(m.getUri().equals(uri)){
 				return m;
@@ -37,14 +37,14 @@ public class FordFulkerson {
 		this.m++;
 	}
 	
-	public void addMission(TreeSet<String> a){
+	public void addMission(TreeSet<String> a){ //This method creates all the missions given in a
 		for (String str : a)
 		{
 			addMission(str);
 		}
 	}
 	
-	public Unit unit(String uri){
+	public Unit unit(String uri){//This method returns the unit corresponding to the uri if it exists
 		for (Unit u : units){
 			if(u.getUri().equals(uri)){
 				return u;
@@ -61,18 +61,18 @@ public class FordFulkerson {
 		units.add(u);
 	}
 
-	public void addUnit(HashSet<String> a){
+	public void addUnit(HashSet<String> a){ //This method creates all the units given in a
 		for (String str : a)
 		{
 			addUnit(str);
 		}
 	}
 	
-	public void addAssignement(Mission m,Unit u){
+	public void addAssignement(Mission m,Unit u){ //This method creates the assignment needed between m and u
 		m.addCandidate(u);
 	}
 	
-	public void addAssignement(ArrayList<String> a){
+	public void addAssignement(ArrayList<String> a){ //This method creates all the assignments contained in a
 		for (int i=0;i<a.size();i++)
 		{
 			String unit = a.get(i).split(" ")[0];
@@ -82,12 +82,14 @@ public class FordFulkerson {
 		}
 	}
 	
-	public boolean canAssignMission(Mission m){
+	public boolean canAssignMission(Mission m){  //This method returns if the mission is assignable
 		MissionAssignement a = m.getFreeAssignement();
 		return !a.getIsNotFound();
 	}
 	
-	public void assignMissionToUnit(Mission m, int k, List<Assignement> path){
+	public void assignMissionToUnit(Mission m, int k, List<Assignement> path){//This is the core of the algorithm
+		//k is the depth of the search, if k >= m, all missions have been checked and there is no point to continue
+		//path is the list of assignments checked before, it is initialized with a special fake path to function correctly
 		if(path.isEmpty()||k>=this.m){
 			if(k>=this.m){
 				System.out.println(m+" needs an other unit.");
@@ -96,15 +98,17 @@ public class FordFulkerson {
 		}
 		else
 		{
+			//if the search continues, check if it is possible to assign the mission
 			MissionAssignement a = m.getFreeAssignement();
-			if(!a.getIsNotFound()){
+			if(!a.getIsNotFound()){ //if so do it
 				path.add(a);
 				for (Assignement assign : path){
-					assign.swap();
+					assign.swap(); //swapping all assignments in the path makes it so the number of assignments is strictly increased
 				}
 				path.clear();
 			}
 			else{
+				//if there is no possible assignment, check if there is one the assigned missions of the accessible units
 				for (MissionAssignement link : m.getPotentialCandidate()){
 					path.add(link);
 					UnitAssignement b = link.getCandidate().getChoice();
@@ -118,7 +122,7 @@ public class FordFulkerson {
 		}
 	}
 	
-	public void assignAll(){
+	public void assignAll(){//this method assign all the missions if possible
 		for(Mission m : missions){
 			int k=0;
 			List<Assignement> path = new LinkedList<Assignement>();
@@ -128,7 +132,7 @@ public class FordFulkerson {
 		}
 	}
 	
-	public void saveGraph(String filename) {
+	public void saveGraph(String filename) { //this method logs the results of the algorithm in a file named filename
 		try {
 			PrintStream ps = new PrintStream(filename);
 			ps.println("Report");
@@ -153,11 +157,5 @@ public class FordFulkerson {
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
-	}
-	
-	public static void main(String[] args){
-		
-		
-		
 	}
 }
