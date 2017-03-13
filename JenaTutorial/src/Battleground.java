@@ -27,6 +27,8 @@ import org.apache.jena.util.PrintUtil;
 import org.apache.jena.util.iterator.ExtendedIterator;
 import org.apache.jena.query.* ;
 
+//This is the main class
+
 public class Battleground {
 
 	static String urlModel = "Battleground2.owl";
