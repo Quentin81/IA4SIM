@@ -91,7 +91,9 @@ public class Battleground {
 		ArrayList<String> canDo = new ArrayList<String>();
 		try {
 		  ResultSet results = qexecu.execSelect() ;
-		  
+		  //ResultSet printres = results;
+		  //ResultSetFormatter.out(System.out, printres, query_units) ;
+
 		  for ( ; results.hasNext() ;)
 		  {
 		    QuerySolution soln = results.nextSolution();
