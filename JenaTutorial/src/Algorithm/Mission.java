@@ -12,10 +12,10 @@ import java.util.LinkedList;
 
 public class Mission extends Node {
 
-	private String uri;
-	private boolean isAssigned;
-	private LinkedList<MissionAssignement> list;
-	private MissionAssignement choice;
+	private String uri; //uri of the mission so that it can be found in the ontology
+	private boolean isAssigned; //if the mission is assigned to a unit
+	private LinkedList<MissionAssignement> list; //list of possible assignments
+	private MissionAssignement choice; //chosen assignment if any
 	
 	/**
 	 * 
@@ -49,7 +49,8 @@ public class Mission extends Node {
 		return list;
 	}
 	
-	public void addCandidate(Unit u){
+	public void addCandidate(Unit u){//to add a new possible unit is to add a canditate
+		//to do so, we create a MissionAssignement and a UnitAssignement and we set the needed variables
 		MissionAssignement a = new MissionAssignement(u);
 		UnitAssignement b = new UnitAssignement(this);
 		a.setSymmetric(b);
@@ -61,13 +62,13 @@ public class Mission extends Node {
 		//System.out.println(uri +" can be done by "+u.getUri());
 	}
 	
-	public MissionAssignement getFreeAssignement(){
+	public MissionAssignement getFreeAssignement(){ //return a possible assignment if any
 		for (int i=0;i<list.size();i++){
 			MissionAssignement a = list.get(i);
 			if(!a.getIsChosen())
 			return a;
 		}
-		
+		//if not possible, return an empty assignment that is identifiable as empty
 		return new MissionAssignement();
 	}
 
