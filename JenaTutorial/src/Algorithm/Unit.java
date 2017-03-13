@@ -1,15 +1,23 @@
 package Algorithm;
 import java.util.LinkedList;
 
+
+/**
+*This class Unit must be assigned to missions
+*
+*
+*
+*/
+
 public class Unit extends Node {
 	
-	private String uri;
-	private boolean isAssigned;
-	private LinkedList<UnitAssignement> list;
-	private UnitAssignement choice;
-	private Mission mission;
-	private boolean needEquipment;
-	private String neededEquipment;
+	private String uri; //uri of the Unit
+	private boolean isAssigned; //if it is assigned
+	private LinkedList<UnitAssignement> list; //list of possible assignments
+	private UnitAssignement choice; //chosen assignment if any
+	private Mission mission; //chosen mission if any
+	private boolean needEquipment; //if it needs additional equipments
+	private String neededEquipment; //needed equipments
 	
 	public Unit(String uri){
 		//System.out.println(uri);
