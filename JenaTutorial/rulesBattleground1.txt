@@ -87,7 +87,7 @@ ge(?hs,?ns),
 (?x myOnto:has_sight ?hs),
 ge(?hs,?ns),
 (?x myOnto:has_equipment ?e),
-(?y myOnto:has_environment ?a),
+(?e myOnto:has_environment ?a),
 (?e myOnto:can_operate ?a),
 (?y myOnto:has_target ?t),
 (?e myOnto:can_destroy ?t) 

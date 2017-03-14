@@ -1,20 +1,14 @@
 package Algorithm;
 
-/** 
-* This class is the link between a mission and a unit
-* 
-*
-*/
-
 public class MissionAssignement extends Assignement{
 
-	private boolean notFound; //A special variable for special faulty assignment
-	private Unit candidate; //Destination of the assignment
-	private boolean isChosen; //if the assignment is chosen
-	private boolean hasSym; //if the assignment has a symmetric (true unless it is faulty)
-	private UnitAssignement symmetric; //symmetric assignment
+	private boolean notFound;
+	private Unit candidate;
+	private boolean isChosen;
+	private boolean hasSym;
+	private UnitAssignement symmetric;
 	
-	public MissionAssignement(){//This method creates a faulty assignment
+	public MissionAssignement(){
 		this.notFound=true;
 		this.candidate=null;
 		this.isChosen=true;
@@ -59,7 +53,7 @@ public class MissionAssignement extends Assignement{
 		this.symmetric=a;
 	}
 	
-	public void getChosen(){//This method changes the variables accordingly when the assignment is chosen
+	public void getChosen(){
 		this.isChosen=true;
 		this.candidate.setIsAssigned(true);
 		this.candidate.setChoice(this.symmetric);
@@ -68,7 +62,7 @@ public class MissionAssignement extends Assignement{
 		this.symmetric.getMission().setChoice(this);
 	}
 	
-	public void getUnchosen(){//This method changes the variables accordingly when the assignment is not chosen
+	public void getUnchosen(){
 		this.isChosen=false;
 		if (hasSym)
 		{
@@ -76,7 +70,7 @@ public class MissionAssignement extends Assignement{
 		}
 	}
 	
-	public void swap(){//This method changes the status of the assignment
+	public void swap(){
 		if (!notFound){
 			if (isChosen){
 				getUnchosen();

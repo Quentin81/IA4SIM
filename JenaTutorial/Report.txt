@@ -1,29 +1,27 @@
 Report
 mission [
-uri Mission1
-is assigned to Battleship4.
-]
+name Mission1
+is assigned to Battleship4.]
+
 mission [
-uri Mission2
-is assigned to Bomber2.
-]
+name Mission2
+is assigned to Bomber2.]
+
 mission [
-uri Mission3
+name Mission3
 is assigned to Fighter3.
-needs Armour_piercing
+needs Armour_piercing.]
 
-]
 mission [
-uri Mission4
-was not assigned.
-]
+name Mission4
+was not assigned.]
+
 mission [
-uri Mission5
+name Mission5
 is assigned to IR2.
-needs Sniper
+needs Sniper.]
 
-]
 mission [
-uri Mission6
-is assigned to Battleship3.
-]
+name Mission6
+is assigned to Battleship3.]
+

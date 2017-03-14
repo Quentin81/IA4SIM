@@ -1,22 +1,14 @@
 
-import java.io.*;
 import java.util.*;
-import org.apache.jena.datatypes.xsd.XSDDatatype;
-import org.apache.jena.ontology.ObjectProperty;
-import org.apache.jena.ontology.OntClass;
-import org.apache.jena.ontology.OntModel;
 import org.apache.jena.vocabulary.*;
 
 import Algorithm.*;
 
-import org.apache.jena.*;
 import org.apache.jena.rdf.model.InfModel;
-import org.apache.jena.rdf.model.Literal;
 import org.apache.jena.rdf.model.Model;
 import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.rdf.model.Property;
 import org.apache.jena.rdf.model.RDFNode;
-import org.apache.jena.rdf.model.ResIterator;
 import org.apache.jena.rdf.model.Resource;
 import org.apache.jena.rdf.model.Statement;
 import org.apache.jena.rdf.model.StmtIterator;
@@ -24,10 +16,7 @@ import org.apache.jena.reasoner.Reasoner;
 import org.apache.jena.reasoner.rulesys.GenericRuleReasonerFactory;
 import org.apache.jena.util.FileManager;
 import org.apache.jena.util.PrintUtil;
-import org.apache.jena.util.iterator.ExtendedIterator;
 import org.apache.jena.query.* ;
-
-//This is the main class
 
 public class Battleground {
 

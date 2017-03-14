@@ -1,6 +1,6 @@
 package Algorithm;
 
-public abstract class Assignement {//This abstract class serves as union between MissionAssignement and UnitAssignement
+public abstract class Assignement {
 
 	private boolean isChosen;
 	
