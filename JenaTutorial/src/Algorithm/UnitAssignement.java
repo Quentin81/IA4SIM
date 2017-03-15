@@ -74,7 +74,7 @@ public class UnitAssignement extends Assignement{
 		if (isChosen||notFound){
 			getUnchosen();
 		}
-		{
+		else {
 			getChosen();
 		}
 	}
