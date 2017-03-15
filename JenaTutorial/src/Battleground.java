@@ -1,4 +1,6 @@
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.*;
 import org.apache.jena.vocabulary.*;
 
@@ -109,8 +111,22 @@ public class Battleground {
 		
 		f.saveGraph("Report.txt");
 		
-		
-		
+
+		FileWriter fw;
+		try {
+			fw = new FileWriter("BattlegroundSolved.owl");
+	        model.write( fw, "RDF/XML-ABBREV" );
+			fw.close();
+
+	        System.out.println("BattlegroundSolved.owl printed");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        
+                
+          
+	
 		
 		
 	}
