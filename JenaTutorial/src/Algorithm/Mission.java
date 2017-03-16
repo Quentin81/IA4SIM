@@ -64,7 +64,7 @@ public class Mission extends Node {
 	public MissionAssignement getFreeAssignement(){
 		for (int i=0;i<list.size();i++){
 			MissionAssignement a = list.get(i);
-			if(!a.getIsChosen())
+			if(!a.getCandidate().getIsAssigned())
 			return a;
 		}
 		
