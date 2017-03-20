@@ -13,3 +13,7 @@ After some intensive research, we reached the conclusion to use OpenSource ways 
 Ultimately, we were able to design an ontology including many military concepts such as Unit, Mission, Target, Environment & Equipment. We could create a reasoner that supports 35 rules and we completed it with an implemented adapted Ford-Fulkerson algorithm to assign missions to units.
 
 The project is currently fully functional. It can be further developed to complexify the ontology or optimize the algorithm. Also rules can be added for a sharper artificial intelligence. 
+
+Demonstration :
+
+https://www.youtube.com/watch?v=o9YY6koysZI
