@@ -2,7 +2,10 @@
 
 By Tithnara SUN & Quentin AUBERTOT
 
-## Keywords: Inference engine, ontology, OWL, SPARQL
+## Keywords: 
+Inference engine, ontology, OWL, SPARQL
+
+## Project:
 
 Military officers must train themselves in taking real-time decisions in a battlefield. To do so, the military uses computer simulation tools, as it would be too complicated and not very cost-effective to make a mock battlefield using real soldiers every time an officer must train.
 
@@ -15,5 +18,4 @@ Ultimately, we were able to design an ontology including many military concepts 
 The project is currently fully functional. It can be further developed to complexify the ontology or optimize the algorithm. Also rules can be added for a sharper artificial intelligence. 
 
 ## Demonstration :
-
 https://www.youtube.com/watch?v=o9YY6koysZI
